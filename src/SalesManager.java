@@ -5,7 +5,7 @@ public class SalesManager {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		SalesListManager mlManager = new SalesListManager(input);
+		SalesListManager slManager = new SalesListManager(input);
 		
 		int num = 0;
 		while (num != 5) {
@@ -20,10 +20,10 @@ public class SalesManager {
 			num = input.nextInt();
 			
 			switch(num) {
-			case 1 : mlManager.add_SalesList(); break;
-			case 2 : mlManager.delete_SalesList(); break;
-			case 3 : mlManager.edit_SalesList(); break;
-			case 4 : mlManager.view_SalesList(); break;
+			case 1 : slManager.add_SalesList(); break;
+			case 2 : slManager.delete_SalesList(); break;
+			case 3 : slManager.edit_SalesList(); break;
+			case 4 : slManager.view_SalesList(); break;
 			}
 		}
 		System.out.print("프로그램을 종료합니다.");
