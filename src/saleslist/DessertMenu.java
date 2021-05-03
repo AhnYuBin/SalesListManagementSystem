@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class DessertMenu extends Menu {
 	
+	public DessertMenu(MenuKind kind) {
+		super(kind);
+	}
+	
 	public void getUserInput(Scanner input) {
 		System.out.print("Menu name :");
 		String name = input.next();

@@ -3,7 +3,9 @@ import java.util.Scanner;
 
 import saleslist.AdeMenu;
 import saleslist.CoffeeMenu;
+import saleslist.DessertMenu;
 import saleslist.Menu;
+import saleslist.MenuKind;
 
 import java.util.ArrayList;
 
@@ -26,19 +28,19 @@ public class SalesListManager {
 			System.out.print("*** Select num for Menu Kind : ***");
 			kind = input.nextInt();
 			if (kind == 1) {
-				menu = new CoffeeMenu();
+				menu = new CoffeeMenu(MenuKind.coffee);
 				menu.getUserInput(input);
 				menus.add(menu);
 				break;
 			}
 			else if (kind == 2) {
-				menu = new AdeMenu();
+				menu = new AdeMenu(MenuKind.ade);
 				menu.getUserInput(input);
 				menus.add(menu);
 				break;
 			}
 			else if (kind == 3) {
-				menu = new DessertMenu();
+				menu = new DessertMenu(MenuKind.dessert);
 				menu.getUserInput(input);
 				menus.add(menu);
 				break;
@@ -99,10 +101,8 @@ public class SalesListManager {
 				}
 				System.out.println("*** 수정완료! 초기메뉴로 돌아갑니다. ***");
 			}
-			else {	
-				System.out.println("*** 등록된 메뉴가 없거나 잘못 입력하였습니다. ***");
-			}
-		} //for문
+		} 
+		System.out.println("*** 해당메뉴는 없습니다. 초기메뉴로 돌아갑니다. ***");
 	}
 	
 	public void view_SalesList() {

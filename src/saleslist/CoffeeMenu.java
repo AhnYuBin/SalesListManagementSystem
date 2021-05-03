@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class CoffeeMenu extends Menu{
 	
+	public CoffeeMenu(MenuKind kind) {
+		super(kind);
+	}
+
 	public void getUserInput(Scanner input) {
 		System.out.print("Menu name :");
 		String name = input.next();
@@ -27,6 +31,23 @@ public class CoffeeMenu extends Menu{
 				break;
 			}
 		}
+	}
+	public void printmenu() {
+		String mkind = "none";
+		switch(this.kind) {
+		case coffee:
+			mkind = "Coffee";
+			break;
+		case ade:
+			mkind = "Ade";
+			break;
+		case dessert:
+			mkind = "Dessert";
+			break;
+		default :
+		}
+		System.out.println("kind: " + mkind + "\nname : " + name + "\nprice : " + price);
+		System.out.println("---------------------------------------------------------------");
 	}
 
 }

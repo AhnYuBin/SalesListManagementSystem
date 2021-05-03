@@ -13,6 +13,10 @@ public class Menu {
 		
 	}
 	
+	public Menu(MenuKind kind) { 
+		this.kind = kind;
+	}
+	
 	public Menu(String name, int price) {
 		this.name = name;
 		this.price = price;
@@ -56,8 +60,22 @@ public class Menu {
 		this.season = season;
 	}
 	
+	
 	public void printmenu() {
-		System.out.println("name : " + name + "\nprice : " + price + "\nseason : " + season);
+		String mkind = "none";
+		switch(this.kind) {
+		case coffee:
+			mkind = "Coffee";
+			break;
+		case ade:
+			mkind = "Ade";
+			break;
+		case dessert:
+			mkind = "Dessert";
+			break;
+		default :
+		}
+		System.out.println("kind: " + mkind + "\nname : " + name + "\nprice : " + price + "\nseason : " + season);
 		System.out.println("---------------------------------------------------------------");
 	}
 	
