@@ -17,7 +17,7 @@ public class CoffeeMenu extends Menu{
 				System.out.print("Menu price :");
 				int price = input.nextInt();
 				this.setPrice(price + 500);
-				this.setName("아이스 " + name); //Hot, Ice 구별을 위해 자동으로 아이스 명시
+				this.setName("아이스" + name); //Hot, Ice 구별을 위해 자동으로 아이스 명시
 				break;
 			}
 			else {

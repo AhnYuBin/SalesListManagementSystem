@@ -1,3 +1,4 @@
+package mainmenu;
 import java.util.Scanner;
 
 public class SalesManager {

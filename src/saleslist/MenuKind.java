@@ -2,5 +2,6 @@ package saleslist;
 
 public enum MenuKind {
 	coffee,
-	ade
+	ade,
+	dessert
 }

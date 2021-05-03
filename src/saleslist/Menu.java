@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class Menu {
 
-	protected MenuKind kine = MenuKind.coffee;
+	protected MenuKind kind = MenuKind.coffee;
 	protected String name;
 	protected int price;
+	protected String season;
 	
 	public Menu() {
 		
@@ -17,12 +18,18 @@ public class Menu {
 		this.price = price;
 	}
 	
+	public Menu(String name, int price, String season) {
+		this.name = name;
+		this.price = price;
+		this.season = season;
+	}
+	
 	public MenuKind getKine() {
-		return kine;
+		return kind;
 	}
 
-	public void setKine(MenuKind kine) {
-		this.kine = kine;
+	public void setKine(MenuKind kind) {
+		this.kind = kind;
 	}
 
 	public String getName() {
@@ -41,8 +48,17 @@ public class Menu {
 		this.price = price;
 	}
 	
+	public String getSeason() {
+		return season;
+	}
+	
+	public void setSeason(String season) {
+		this.season = season;
+	}
+	
 	public void printmenu() {
-		System.out.println("name : " + name + "\nprice : " + price);
+		System.out.println("name : " + name + "\nprice : " + price + "\nseason : " + season);
+		System.out.println("---------------------------------------------------------------");
 	}
 	
 	public void getUserInput(Scanner input) { 
@@ -53,5 +69,9 @@ public class Menu {
 		System.out.print("Menu price :");
 		int price = input.nextInt();
 		this.setPrice(price);
+		
+		System.out.print("Menu season :");
+		String season = input.next();
+		this.setSeason(season);
 	}
 }

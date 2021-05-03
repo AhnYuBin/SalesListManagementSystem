@@ -2,7 +2,7 @@ package saleslist;
 
 import java.util.Scanner;
 
-public class AdeMenu extends Menu{
+public class DessertMenu extends Menu {
 	
 	public void getUserInput(Scanner input) {
 		System.out.print("Menu name :");

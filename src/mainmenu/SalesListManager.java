@@ -1,3 +1,4 @@
+package mainmenu;
 import java.util.Scanner;
 
 import saleslist.AdeMenu;
@@ -19,10 +20,10 @@ public class SalesListManager {
 		int kind = 0;
 		Menu menu;
 		while (kind != 1 && kind !=2 && kind != 3) {
-			System.out.println("1 for Coffee ");
-			System.out.println("2 for Ade ");
-			System.out.println("3 for Dessert ");
-			System.out.print("Select num for Menu Kind : ");
+			System.out.println("1. for Coffee ");
+			System.out.println("2. for Ade ");
+			System.out.println("3. for Dessert ");
+			System.out.print("*** Select num for Menu Kind : ***");
 			kind = input.nextInt();
 			if (kind == 1) {
 				menu = new CoffeeMenu();
@@ -37,7 +38,7 @@ public class SalesListManager {
 				break;
 			}
 			else if (kind == 3) {
-				menu = new Menu();
+				menu = new DessertMenu();
 				menu.getUserInput(input);
 				menus.add(menu);
 				break;
@@ -74,6 +75,7 @@ public class SalesListManager {
 	public void edit_SalesList() {
 		System.out.print("Menu name :");
 		String search_name = input.next();
+		
 		for (int i= 0; i<menus.size(); i++) {
 			Menu menu = menus.get(i);
 			if(menus.get(i).getName().equals(search_name)) {
