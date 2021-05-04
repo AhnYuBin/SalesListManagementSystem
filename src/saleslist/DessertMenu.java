@@ -33,5 +33,11 @@ public class DessertMenu extends Menu {
 		break;
 		}
 	}
+	
+	public void printmenu() {
+		String mkind = "Dessert";
+		System.out.println("kind: " + mkind + "\nname : " + name + "\nprice : " + price  + "\nseason : " + season);
+		System.out.println("---------------------------------------------------------------");
+	}
 
 }

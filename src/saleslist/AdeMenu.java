@@ -34,5 +34,11 @@ public class AdeMenu extends Menu{
 		break;
 		}
 	}
+	
+	public void printmenu() {
+		String mkind = "Ade";
+		System.out.println("kind: " + mkind + "\nname : " + name + "\nprice : " + price  + "\nseason : " + season);
+		System.out.println("---------------------------------------------------------------");
+	}
 
 }

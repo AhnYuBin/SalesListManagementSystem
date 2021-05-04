@@ -75,7 +75,7 @@ public class Menu {
 			break;
 		default :
 		}
-		System.out.println("kind: " + mkind + "\nname : " + name + "\nprice : " + price + "\nseason : " + season);
+		System.out.println("kind: " + mkind + "\nname : " + name + "\nprice : " + price);
 		System.out.println("---------------------------------------------------------------");
 	}
 	
@@ -88,8 +88,5 @@ public class Menu {
 		int price = input.nextInt();
 		this.setPrice(price);
 		
-		System.out.print("Menu season :");
-		String season = input.next();
-		this.setSeason(season);
 	}
 }

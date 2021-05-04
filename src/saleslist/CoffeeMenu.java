@@ -32,22 +32,4 @@ public class CoffeeMenu extends Menu{
 			}
 		}
 	}
-	public void printmenu() {
-		String mkind = "none";
-		switch(this.kind) {
-		case coffee:
-			mkind = "Coffee";
-			break;
-		case ade:
-			mkind = "Ade";
-			break;
-		case dessert:
-			mkind = "Dessert";
-			break;
-		default :
-		}
-		System.out.println("kind: " + mkind + "\nname : " + name + "\nprice : " + price);
-		System.out.println("---------------------------------------------------------------");
-	}
-
 }
