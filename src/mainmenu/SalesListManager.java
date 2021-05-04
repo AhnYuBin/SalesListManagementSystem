@@ -102,7 +102,6 @@ public class SalesListManager {
 				System.out.println("*** 수정완료! 초기메뉴로 돌아갑니다. ***");
 			}
 		} 
-		System.out.println("*** 해당메뉴는 없습니다. 초기메뉴로 돌아갑니다. ***");
 	}
 	
 	public void view_SalesList() {

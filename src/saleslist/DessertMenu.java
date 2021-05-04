@@ -36,7 +36,7 @@ public class DessertMenu extends Menu {
 	
 	public void printmenu() {
 		String mkind = "Dessert";
-		System.out.println("kind: " + mkind + "\nname : " + name + "\nprice : " + price  + "\nseason : " + season);
+		System.out.println("kind: " + mkind + "\nname : " + this.getName() + "\nprice : " + this.getPrice()  + "\nseason : " + this.getSeason());
 		System.out.println("---------------------------------------------------------------");
 	}
 

@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Menu {
 
 	protected MenuKind kind = MenuKind.coffee;
-	protected String name;
-	protected int price;
-	protected String season;
+	private String name;
+	private int price;
+	private String season;
 	
 	public Menu() {
 		
