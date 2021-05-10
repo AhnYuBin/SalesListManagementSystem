@@ -2,7 +2,7 @@ package saleslist;
 
 import java.util.Scanner;
 
-public class AdeMenu extends Menu{
+public class AdeMenu extends Menu implements MenuInput {
 
 	
 	public AdeMenu(MenuKind kind) {
@@ -34,6 +34,8 @@ public class AdeMenu extends Menu{
 		break;
 		}
 	}
+	
+	
 	
 	public void printmenu() {
 		String mkind = "Ade";

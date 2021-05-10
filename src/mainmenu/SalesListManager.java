@@ -5,12 +5,13 @@ import saleslist.AdeMenu;
 import saleslist.CoffeeMenu;
 import saleslist.DessertMenu;
 import saleslist.Menu;
+import saleslist.MenuInput;
 import saleslist.MenuKind;
 
 import java.util.ArrayList;
 
 public class SalesListManager {
-	ArrayList<Menu> menus = new ArrayList<Menu>();
+	ArrayList<MenuInput> menus = new ArrayList<MenuInput>();
 	Menu menu;
 	Scanner input;
 	
@@ -20,7 +21,7 @@ public class SalesListManager {
 	
 	public void add_SalesList() {
 		int kind = 0;
-		Menu menu;
+		MenuInput menuInput ;
 		while (kind != 1 && kind !=2 && kind != 3) {
 			System.out.println("1. for Coffee ");
 			System.out.println("2. for Ade ");
@@ -28,21 +29,21 @@ public class SalesListManager {
 			System.out.print("*** Select num for Menu Kind : ***");
 			kind = input.nextInt();
 			if (kind == 1) {
-				menu = new CoffeeMenu(MenuKind.coffee);
-				menu.getUserInput(input);
-				menus.add(menu);
+				menuInput = new CoffeeMenu(MenuKind.coffee);
+				menuInput.getUserInput(input);
+				menus.add(menuInput);
 				break;
 			}
 			else if (kind == 2) {
-				menu = new AdeMenu(MenuKind.ade);
-				menu.getUserInput(input);
-				menus.add(menu);
+				menuInput = new AdeMenu(MenuKind.ade);
+				menuInput.getUserInput(input);
+				menus.add(menuInput);
 				break;
 			}
 			else if (kind == 3) {
-				menu = new DessertMenu(MenuKind.dessert);
-				menu.getUserInput(input);
-				menus.add(menu);
+				menuInput = new DessertMenu(MenuKind.dessert);
+				menuInput.getUserInput(input);
+				menus.add(menuInput);
 				break;
 			}
 			else {
@@ -79,9 +80,9 @@ public class SalesListManager {
 		String search_name = input.next();
 		
 		for (int i= 0; i<menus.size(); i++) {
-			Menu menu = menus.get(i);
+			MenuInput menuInput = menus.get(i);
 			if(menus.get(i).getName().equals(search_name)) {
-				int num;	
+				int num;	 
 				System.out.println("1. Edit Name");
 				System.out.println("2. Edit Price");
 						
@@ -91,12 +92,12 @@ public class SalesListManager {
 				case 1 : 
 					System.out.print("Menu Name : " );
 					String name = input.next();
-					menu.setName(name);
+					menuInput.setName(name);
 					break;
 				case 2 :
 					System.out.print("Menu Price : ");
 					int price = input.nextInt();
-					menu.setPrice(price);
+					menuInput.setPrice(price);
 					break;
 				}
 				System.out.println("*** 수정완료! 초기메뉴로 돌아갑니다. ***");

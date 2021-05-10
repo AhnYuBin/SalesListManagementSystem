@@ -2,7 +2,7 @@ package saleslist;
 
 import java.util.Scanner;
 
-public class CoffeeMenu extends Menu{
+public class CoffeeMenu extends Menu implements MenuInput {
 	
 	public CoffeeMenu(MenuKind kind) {
 		super(kind);
@@ -31,5 +31,22 @@ public class CoffeeMenu extends Menu{
 				break;
 			}
 		}
+	}
+	public void printmenu() {
+		String mkind = "none";
+		switch(this.kind) {
+		case coffee:
+			mkind = "Coffee";
+			break;
+		case ade:
+			mkind = "Ade";
+			break;
+		case dessert:
+			mkind = "Dessert";
+			break;
+		default :
+		}
+		System.out.println("kind: " + mkind + "\nname : " + this.getName() + "\nprice : " + this.getPrice());
+		System.out.println("---------------------------------------------------------------");
 	}
 }
