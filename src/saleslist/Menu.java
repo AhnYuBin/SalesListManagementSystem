@@ -62,22 +62,6 @@ public abstract class Menu {
 	
 	
 	public abstract void printmenu();
-//		String mkind = "none";
-//		switch(this.kind) {
-//		case coffee:
-//			mkind = "Coffee";
-//			break;
-//		case ade:
-//			mkind = "Ade";
-//			break;
-//		case dessert:
-//			mkind = "Dessert";
-//			break;
-//		default :
-//		}
-//		System.out.println("kind: " + mkind + "\nname : " + name + "\nprice : " + price);
-//		System.out.println("---------------------------------------------------------------");
-//	}
 	
 	public void getUserInput(Scanner input) { 
 		System.out.print("Menu name :");
