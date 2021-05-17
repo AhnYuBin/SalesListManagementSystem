@@ -14,4 +14,8 @@ public interface MenuInput {
 	
 	public void getUserInput(Scanner input);
 	
+	public void setMenuPrice(Scanner input);
+	
+	public void setMenuName(Scanner input);
+	
 }
