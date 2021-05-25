@@ -8,13 +8,19 @@ import saleslist.Menu;
 import saleslist.MenuInput;
 import saleslist.MenuKind;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-public class SalesListManager {
+public class SalesListManager implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8425492691090944626L;
+	
 	ArrayList<MenuInput> menus = new ArrayList<MenuInput>();
 	Menu menu;
-	Scanner input;
+	transient Scanner input;
 	
 	SalesListManager(Scanner input) {
 		this.input = input;

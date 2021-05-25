@@ -1,0 +1,2 @@
+5¿ù 25, 2021 4:37:54 ¿ÀÈÄ log.EventLogger log
+INFO: view a list of menu

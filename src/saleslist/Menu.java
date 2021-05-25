@@ -1,10 +1,16 @@
 package saleslist;
 
+import java.io.Serializable;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public abstract class Menu implements MenuInput{
+public abstract class Menu implements MenuInput, Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3161887260905725707L;
+	
 	protected MenuKind kind = MenuKind.coffee;
 	protected String name;
 	protected int price;
