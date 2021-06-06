@@ -16,6 +16,8 @@ public abstract class Menu implements MenuInput, Serializable{
 	protected int price;
 	protected String season;
 	
+	protected String type; //타입 추가
+	
 	public Menu() {
 		
 	}
@@ -29,11 +31,18 @@ public abstract class Menu implements MenuInput, Serializable{
 		this.price = price;
 	}
 	
-	public Menu(String name, int price, String season) {
+	public Menu(String name, int price, String type) {
+		this.name = name;
+		this.price = price;
+		this.type = type;
+	}
+	
+	public Menu(String name, int price, String type, String season) {
 		this.name = name;
 		this.price = price;
 		this.season = season;
-	}
+		this.type = type;
+	} //바꿔야함
 	
 	public MenuKind getKine() {
 		return kind;
@@ -67,7 +76,40 @@ public abstract class Menu implements MenuInput, Serializable{
 		this.season = season;
 	}
 	
+	public String getType() {
+		return type;
+	} // 추가
+	
+	public void setType(String type) {
+		this.type = type;
+	} // 추가
+	
 	public abstract void printmenu();
+	
+	public void setMenuTypeYN(Scanner input) {
+char answer = 'x';
+		
+		while (answer != 'y' && answer != 'Y') {
+			System.out.print("Is it ice coffee ? (Y/N) : ");
+			answer = input.next().charAt(0);
+			
+			if (answer =='y' || answer == 'Y') {
+				setMenuPrice(input);
+				this.setPrice(getPrice()+500); //Ice는 500원 추가된 가격으로 저장
+				this.setName("아이스" + getName()); //Hot, Ice 구별을 위해 자동으로 아이스 명시
+				this.setType("ice"); //추가
+				break;
+			}
+			else if (answer =='N' || answer == 'n') {
+				setMenuPrice(input);
+				this.setType("hot"); //추가
+				break;
+			}
+			else {
+				System.out.println("다시 입력하세요. (Y/y/N/n)");
+			}
+		}
+	}
 	
 	public void setMenuSeaonYN(Scanner input) {
 		String answer = "N";

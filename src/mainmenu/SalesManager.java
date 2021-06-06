@@ -7,6 +7,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import gui.WindowFrame;
 import log.EventLogger;
 
 public class SalesManager {
@@ -20,6 +22,8 @@ public class SalesManager {
 			slManager = new SalesListManager(input);
 		}
 		
+		
+		WindowFrame frame = new WindowFrame(slManager);
 		selectMenu(input, slManager);
 		
 		putObject(slManager, "slManager.ser");

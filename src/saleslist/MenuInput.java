@@ -8,7 +8,17 @@ public interface MenuInput {
 	
 	public void setName(String name);
 	
+	public int getPrice();
+	
 	public void setPrice(int price);
+	
+	public String getType();
+	
+	public void setType(String type);
+	
+	public String getSeason();
+	
+	public void setSeason(String season);
 	
 	public void printmenu();
 	

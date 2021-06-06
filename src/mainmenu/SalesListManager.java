@@ -119,6 +119,14 @@ public class SalesListManager implements Serializable {
 		}
 	}
 	
+	public int size() {
+		return menus.size();
+	}
+	
+	public MenuInput get(int index) {
+		return (Menu) menus.get(index);
+	}
+	
 	public void showAddMenu() { 
 		System.out.println("1. for Coffee ");
 		System.out.println("2. for Ade ");
