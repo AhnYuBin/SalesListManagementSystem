@@ -11,7 +11,6 @@ public class EventLogger {
 	LogManager logmanager;
 	Logger logger;
 
-
 	public EventLogger(String fileName) {
 		try {
 			logmanager = LogManager.getLogManager();

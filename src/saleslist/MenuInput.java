@@ -12,9 +12,9 @@ public interface MenuInput {
 	
 	public void setPrice(int price);
 	
-	public String getType();
+	public char getType();
 	
-	public void setType(String type);
+	public void setType(char type);
 	
 	public String getSeason();
 	
@@ -22,10 +22,19 @@ public interface MenuInput {
 	
 	public void printmenu();
 	
-	public void getUserInput(Scanner input);
-	
 	public void setMenuPrice(Scanner input);
 	
 	public void setMenuName(Scanner input);
+
+	public MenuKind getKind();
+	
+	public void getUserInput(Scanner input);
+	
+	public void setKind(MenuKind kind);
+	
+	public void setMenuTypeYN(Scanner input);
+	
+	public void setMenuSeaonYN(Scanner input);
+	
 	
 }

@@ -15,8 +15,7 @@ public abstract class Menu implements MenuInput, Serializable{
 	protected String name;
 	protected int price;
 	protected String season;
-	
-	protected String type; //타입 추가
+	protected char type; 
 	
 	public Menu() {
 		
@@ -31,24 +30,23 @@ public abstract class Menu implements MenuInput, Serializable{
 		this.price = price;
 	}
 	
-	public Menu(String name, int price, String type) {
+	public Menu(String name, int price, char type) {
 		this.name = name;
 		this.price = price;
 		this.type = type;
 	}
 	
-	public Menu(String name, int price, String type, String season) {
+	public Menu(String name, int price, String season) {
 		this.name = name;
 		this.price = price;
 		this.season = season;
-		this.type = type;
-	} //바꿔야함
+	} 
 	
-	public MenuKind getKine() {
+	public MenuKind getKind() {
 		return kind;
 	}
 
-	public void setKine(MenuKind kind) {
+	public void setKind(MenuKind kind) {
 		this.kind = kind;
 	}
 
@@ -76,67 +74,37 @@ public abstract class Menu implements MenuInput, Serializable{
 		this.season = season;
 	}
 	
-	public String getType() {
+	public char getType() {
 		return type;
-	} // 추가
+	}
 	
-	public void setType(String type) {
+	public void setType(char type) {
 		this.type = type;
 	} // 추가
 	
 	public abstract void printmenu();
 	
-	public void setMenuTypeYN(Scanner input) {
-char answer = 'x';
-		
-		while (answer != 'y' && answer != 'Y') {
-			System.out.print("Is it ice coffee ? (Y/N) : ");
-			answer = input.next().charAt(0);
-			
-			if (answer =='y' || answer == 'Y') {
-				setMenuPrice(input);
-				this.setPrice(getPrice()+500); //Ice는 500원 추가된 가격으로 저장
-				this.setName("아이스" + getName()); //Hot, Ice 구별을 위해 자동으로 아이스 명시
-				this.setType("ice"); //추가
-				break;
-			}
-			else if (answer =='N' || answer == 'n') {
-				setMenuPrice(input);
-				this.setType("hot"); //추가
-				break;
-			}
-			else {
-				System.out.println("다시 입력하세요. (Y/y/N/n)");
-			}
-		}
-	}
-	
-	public void setMenuSeaonYN(Scanner input) {
-		String answer = "N";
-		while (true) {
-			System.out.print("시즌 메뉴 인가요 ? (Y/N) : "); //시즌 메뉴는 1000원 할인된 금액으로 저장
-			answer = input.next();
-			if (answer.equals("y") || answer.equals("Y")) {
-				setMenuPrice(input);
-				this.setPrice(price - 1000);
-				this.setSeason(answer);
-				break;
-			}
-			else if (answer.equals("N") || answer.equals("n")){
-				setMenuPrice(input);
-				this.setSeason(answer);
-				break;
-			}
-			else {
-				System.out.println("다시 입력하세요. (Y/y/N/n) ");
-			}
-		}
-	}
-	
 	public void setMenuName(Scanner input) {
 		System.out.print("Menu Name : " );
 		String name = input.next();
 		this.setName(name);
+	}
+	
+	public String getKindString() {
+		String mkind = "none";
+		switch(this.kind) {
+		case coffee:
+			mkind = "Coffee";
+			break;
+		case ade:
+			mkind = "Ade";
+			break;
+		case dessert:
+			mkind = "Dessert";
+			break;
+		default :
+		}
+		return mkind;
 	}
 	
 	public void setMenuPrice(Scanner input) {
@@ -164,6 +132,53 @@ char answer = 'x';
 		System.out.print("Menu price :");
 		int price = input.nextInt();
 		this.setPrice(price);
+	}
+	
+	public void setMenuSeaonYN(Scanner input) {
+		String answer = "N";
+		while (true) {
+			System.out.print("시즌 메뉴 인가요 ? (Y/N) : "); //시즌 메뉴는 1000원 할인된 금액으로 저장
+			answer = input.next();
+			if (answer.equals("y") || answer.equals("Y")) {
+				setMenuPrice(input);
+				this.setPrice(price - 1000);
+				this.setSeason(answer);
+				break;
+			}
+			else if (answer.equals("N") || answer.equals("n")){
+				setMenuPrice(input);
+				this.setSeason(answer);
+				break;
+			}
+			else {
+				System.out.println("다시 입력하세요. (Y/y/N/n) ");
+			}
+		}
+	}
+	
+	public void setMenuTypeYN(Scanner input) {
 		
+		char answer = 'x';
+		
+		while (answer != 'y' && answer != 'Y') {
+			System.out.print("Is it ice coffee ? (Y/N) : ");
+			answer = input.next().charAt(0);
+			
+			if (answer =='y' || answer == 'Y') {
+				setMenuPrice(input);
+				this.setPrice(getPrice()+500); //Ice는 500원 추가된 가격으로 저장
+				this.setName("아이스" + getName()); //Hot, Ice 구별을 위해 자동으로 아이스 명시
+				this.setType('I'); //추가
+				break;
+			}
+			else if (answer =='N' || answer == 'n') {
+				setMenuPrice(input);
+				this.setType('H'); //추가
+				break;
+			}
+			else {
+				System.out.println("다시 입력하세요. (Y/y/N/n)");
+			}
+		}
 	}
 }

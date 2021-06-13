@@ -21,13 +21,14 @@ public class SalesListViewer extends JPanel {
 		this.frame = frame;
 		this.slManager = slManager;
 		
-		System.out.println("***" + slManager.size() + "***");
+//		System.out.println("***" + slManager.size() + "***");
 		
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("NAME");
 		model.addColumn("PRICE");
 		model.addColumn("TYPE");
 		model.addColumn("SEASON");
+		model.addColumn("KIND"); // ¼öÁ¤
 		
 		for (int i=0; i<slManager.size(); i++) {
 			Vector row = new Vector();
@@ -36,6 +37,7 @@ public class SalesListViewer extends JPanel {
 			row.add(mi.getPrice());
 			row.add(mi.getType());
 			row.add(mi.getSeason());
+			row.add(mi.getKind());
 			model.addRow(row);
 		}
 		

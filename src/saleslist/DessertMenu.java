@@ -2,7 +2,7 @@ package saleslist;
 
 import java.util.Scanner;
 
-public class DessertMenu extends Menu{
+public class DessertMenu extends Menu {
 	
 	public DessertMenu(MenuKind kind) {
 		super(kind);

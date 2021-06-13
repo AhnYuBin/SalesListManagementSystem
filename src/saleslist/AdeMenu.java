@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class AdeMenu extends Menu {
 
-	
 	public AdeMenu(MenuKind kind) {
 		super(kind);
 	}
@@ -19,5 +18,6 @@ public class AdeMenu extends Menu {
 		System.out.println("kind: " + mkind + "\nname : " + this.getName() + "\nprice : " + this.getPrice()  + "\nseason : " + this.getSeason());
 		System.out.println("---------------------------------------------------------------");
 	}
+
 
 }

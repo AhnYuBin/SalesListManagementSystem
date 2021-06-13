@@ -22,14 +22,13 @@ public class SalesManager {
 			slManager = new SalesListManager(input);
 		}
 		
-		
 		WindowFrame frame = new WindowFrame(slManager);
 		selectMenu(input, slManager);
 		
 		putObject(slManager, "slManager.ser");
 		
 		System.out.print("프로그램을 종료합니다.");
-		input.close();
+		
 	}
 	
 	public static void selectMenu(Scanner input, SalesListManager slManager) {
@@ -102,7 +101,6 @@ public class SalesManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		return slManager;
 	}
 	

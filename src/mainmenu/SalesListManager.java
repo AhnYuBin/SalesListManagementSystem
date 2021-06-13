@@ -26,6 +26,17 @@ public class SalesListManager implements Serializable {
 		this.input = input;
 	}
 	
+	public void setScanner(Scanner input) {
+		this.input= input;
+	}
+	
+	public void add_SalesList(String name, String price, String type, String season, String kind) {
+		MenuInput menuInput = new CoffeeMenu(MenuKind.coffee);
+		addMenuInput(menuInput);	
+	}
+	
+	
+	
 	public void add_SalesList() {
 		showAddMenu();
 		int kind = 0;
@@ -37,7 +48,9 @@ public class SalesListManager implements Serializable {
 				switch(kind) {
 				case 1 : 
 					menuInput = new CoffeeMenu(MenuKind.coffee);
-					addMenuInput(menuInput);
+					menuInput.getUserInput(input);
+					menus.add(menuInput);
+//					addMenuInput(menuInput);			
 					break;
 				case 2 :
 					menuInput = new AdeMenu(MenuKind.ade);
@@ -75,6 +88,7 @@ public class SalesListManager implements Serializable {
 		}
 		removefromMenus(index, name);
 	}
+	
 	
 	public void edit_SalesList() {
 		System.out.print("Menu name :");

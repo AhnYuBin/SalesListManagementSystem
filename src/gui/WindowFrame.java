@@ -8,6 +8,7 @@ import mainmenu.SalesListManager;
 public class WindowFrame extends JFrame {
 	
 	SalesListManager slManager;
+	
 	MenuSelection menuSelection;
 	SalesListAdder menuAdder;
 	SalesListViewer menuViewer;
@@ -19,7 +20,7 @@ public class WindowFrame extends JFrame {
 		
 		this.slManager = slManager;
 		this.menuSelection = new MenuSelection(this);
-		this.menuAdder = new SalesListAdder(this);
+		this.menuAdder = new SalesListAdder(this, this.slManager);
 		this.menuViewer = new SalesListViewer(this, this.slManager);
 		
 		
