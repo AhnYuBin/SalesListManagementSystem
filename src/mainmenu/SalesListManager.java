@@ -44,6 +44,7 @@ public class SalesListManager implements Serializable {
 		showAddMenu();
 		int kind = 0;
 		MenuInput menuInput ;
+		input = new Scanner(System.in);
 		while (kind != 1 && kind !=2 && kind != 3) {
 			try {
 				kind = input.nextInt();
@@ -80,6 +81,7 @@ public class SalesListManager implements Serializable {
 	}
 	
 	public void delete_SalesList() {
+		Scanner input = new Scanner(System.in);
 		System.out.print("Menu name :");
 		String name = input.next();
 		
@@ -95,6 +97,7 @@ public class SalesListManager implements Serializable {
 	
 	
 	public void edit_SalesList() {
+		Scanner input = new Scanner(System.in);
 		System.out.print("Menu name :");
 		String search_name = input.next();
 		
