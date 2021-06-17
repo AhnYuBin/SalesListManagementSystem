@@ -10,6 +10,7 @@ public class DessertMenu extends Menu {
 	
 	public void getUserInput(Scanner input) {
 		setMenuName(input);
+		setMenuPrice(input);
 		setMenuSeaonYN(input);
 	}
 	

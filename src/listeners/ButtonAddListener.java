@@ -18,10 +18,10 @@ public class ButtonAddListener implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		JButton b = (JButton) e.getSource();
-		SalesListAdder adder = frame.getMenuAdder();
-		frame.setupPanel(adder);
-
+		frame.getContentPane().removeAll();
+		frame.getContentPane().add(frame.getSaleslistAdder());
+		frame.revalidate();
+		frame.repaint();
 	}
 
 }

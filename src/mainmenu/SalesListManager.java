@@ -30,12 +30,15 @@ public class SalesListManager implements Serializable {
 		this.input= input;
 	}
 	
-	public void add_SalesList(String name, String price, String type, String season, String kind) {
+	public void add_SalesList(String name, String price, String type, String season) {
 		MenuInput menuInput = new CoffeeMenu(MenuKind.coffee);
-		addMenuInput(menuInput);	
+		menuInput.getUserInput(input);
+		menus.add(menuInput);		
 	}
 	
-	
+	public void add_SalesList(MenuInput menuInput) {
+		menus.add(menuInput);		
+	}
 	
 	public void add_SalesList() {
 		showAddMenu();
@@ -49,16 +52,17 @@ public class SalesListManager implements Serializable {
 				case 1 : 
 					menuInput = new CoffeeMenu(MenuKind.coffee);
 					menuInput.getUserInput(input);
-					menus.add(menuInput);
-//					addMenuInput(menuInput);			
+					menus.add(menuInput);		
 					break;
 				case 2 :
 					menuInput = new AdeMenu(MenuKind.ade);
-					addMenuInput(menuInput);
+					menuInput.getUserInput(input);
+					menus.add(menuInput);	
 					break;
 				case 3 :
 					menuInput = new DessertMenu(MenuKind.dessert);
-					addMenuInput(menuInput);
+					menuInput.getUserInput(input);
+					menus.add(menuInput);	
 					break;
 				default : 
 					System.out.println("1~3의 정수를 입력해주세요. "); continue;

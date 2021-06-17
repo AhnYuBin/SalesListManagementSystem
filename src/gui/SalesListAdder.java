@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import listeners.SalesListAdderCancelListener;
 import listeners.SalesListAdderListener;
 import mainmenu.SalesListManager;
 
@@ -46,22 +47,16 @@ public class SalesListAdder extends JPanel {
 		panel.add(labelSeason);
 		panel.add(fieldSeason);
 		
-		JLabel labelKind = new JLabel("KIND : ", JLabel.TRAILING);
-		JTextField fieldKind = new JTextField(10);
-		labelName.setLabelFor(fieldKind);
-		
-		JButton saveButton = new JButton("SAVE");
-		saveButton.addActionListener(new SalesListAdderListener(fieldName, fieldPrice, fieldType, fieldSeason, fieldKind, slManager));
+		JButton saveButton = new JButton("SAVE"); 
+		saveButton.addActionListener(new SalesListAdderListener(fieldName, fieldPrice, fieldType, fieldSeason,  slManager));
 		
 		JButton cancelButton = new JButton("CANCEL");
-		
-		panel.add(labelKind);
-		panel.add(fieldKind);
+		cancelButton.addActionListener(new SalesListAdderCancelListener(frame));
 		
 		panel.add(saveButton);
 		panel.add(cancelButton);
 		
-		SpringUtilities.makeCompactGrid(panel, 6, 2, 6, 6, 6, 6);
+		SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6);
 		
 		this.add(panel);
 		this.setVisible(true);

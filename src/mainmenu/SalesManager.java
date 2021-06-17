@@ -15,6 +15,7 @@ public class SalesManager {
 	static EventLogger logger = new EventLogger("log.txt");
 
 	public static void main(String[] args) {
+		
 		Scanner input = new Scanner(System.in);
 		SalesListManager slManager = getObject("slManager.ser");
 

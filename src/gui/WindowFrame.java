@@ -10,8 +10,8 @@ public class WindowFrame extends JFrame {
 	SalesListManager slManager;
 	
 	MenuSelection menuSelection;
-	SalesListAdder menuAdder;
-	SalesListViewer menuViewer;
+	SalesListAdder saleslistAdder;
+	SalesListViewer saleslistViwer;
 
 	public WindowFrame(SalesListManager slManager) {
 		this.setSize(500, 300);
@@ -20,8 +20,8 @@ public class WindowFrame extends JFrame {
 		
 		this.slManager = slManager;
 		this.menuSelection = new MenuSelection(this);
-		this.menuAdder = new SalesListAdder(this, this.slManager);
-		this.menuViewer = new SalesListViewer(this, this.slManager);
+		this.saleslistAdder = new SalesListAdder(this, this.slManager);
+		this.saleslistViwer = new SalesListViewer(this, this.slManager);
 		
 		
 		this.setupPanel(menuSelection);
@@ -45,20 +45,20 @@ public class WindowFrame extends JFrame {
 		this.menuSelection = menuSelection;
 	}
 
-	public SalesListAdder getMenuAdder() {
-		return menuAdder;
+	public SalesListAdder getSaleslistAdder() {
+		return saleslistAdder;
 	}
 
-	public void setMenuAdder(SalesListAdder menuAdder) {
-		this.menuAdder = menuAdder;
+	public void setMenuAdder(SalesListAdder saleslistAdder) {
+		this.saleslistAdder = saleslistAdder;
 	}
 
-	public SalesListViewer getMenuViewer() {
-		return menuViewer;
+	public SalesListViewer getSaleslistViewer() {
+		return saleslistViwer;
 	}
 
-	public void setMenuViewer(SalesListViewer menuViewer) {
-		this.menuViewer = menuViewer;
+	public void setMenuViewer(SalesListViewer saleslistViewer) {
+		this.saleslistViwer = saleslistViewer;
 	}
 
 }

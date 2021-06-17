@@ -10,6 +10,7 @@ public class CoffeeMenu extends Menu {
 
 	public void getUserInput(Scanner input) {
 		setMenuName(input);
+		setMenuPrice(input);
 		setMenuTypeYN(input);
 	}
 	
